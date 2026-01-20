@@ -14,7 +14,7 @@ export class UserService {
       throw new HttpError(409, "Email already in use");
     }
 
-    const usernameCheck = await userRepository.getUserByUsername(data.username);
+    const usernameCheck = await userRepository.getUserByUsername(data.name);
     if (usernameCheck) {
       throw new HttpError(409, "Username already in use");
     }
@@ -44,7 +44,7 @@ export class UserService {
     const payload = {
       id: user._id,
       email: user.email,
-      username: user.username,
+      name: user.name,
       firstName: user.firstName,
       lastName: user.lastName,
       role: user.role,
