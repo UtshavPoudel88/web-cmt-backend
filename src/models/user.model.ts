@@ -7,6 +7,7 @@ const UserSchema: Schema = new Schema<UserType>(
         name: { type: String, required: true, unique: true },
         firstName: { type: String },
         lastName: { type: String },
+        image: { type: String },
         role: {
             type: String,
             enum: ['user', 'admin'],
